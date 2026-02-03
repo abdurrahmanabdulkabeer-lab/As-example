@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Example Website — Jane Doe</title>
+  <meta name="description" content="A simple example website with portfolio and contact form." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="Homepage">
+        <!-- simple logo -->
+        <svg width="36" height="36" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="10" fill="#06b6d4"></circle>
+          <text x="12" y="16" font-size="10" text-anchor="middle" fill="#04263a" font-family="Arial, Helvetica, sans-serif">JD</text>
+        </svg>
+        <span class="brand-text">Jane Doe</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Main navigation">
+        <button id="nav-toggle" class="nav-toggle" aria-controls="nav-list" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="hamburger"></span>
+        </button>
+        <ul id="nav-list" class="nav-list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <h1>Hi, I'm Jane — a Front-end Developer</h1>
+          <p>I build accessible, responsive web experiences and user interfaces with a focus on performance and clarity.</p>
+          <p class="cta-row">
+            <a class="btn primary" href="#projects">View Projects</a>
+            <a class="btn outline" href="#contact">Get in Touch</a>
+          </p>
+        </div>
+        <div class="hero-image" aria-hidden="true">
+          <!-- decorative illustration -->
+          <svg viewBox="0 0 300 200" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+            <rect x="0" y="0" width="300" height="200" rx="12" fill="#e6fffa"></rect>
+            <circle cx="80" cy="80" r="36" fill="#06b6d4"></circle>
+            <rect x="140" y="40" width="120" height="100" rx="8" fill="#06b6d4" opacity="0.85"></rect>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="container about">
+      <h2>About</h2>
+      <div class="about-grid">
+        <div>
+          <p>I’m a front-end developer with a passion for building clear interfaces and well-structured code. I enjoy turning design concepts into accessible, performant experiences on the web.</p>
+          <ul>
+            <li>HTML, CSS & modern JavaScript (ES6+)</li>
+            <li>Responsive and accessible UI</li>
+            <li>Performance-minded & progressive enhancement</li>
+          </ul>
+        </div>
+        <div class="skills">
+          <h3>Skills</h3>
+          <div class="skill-list">
+            <span class="chip">HTML</span>
+            <span class="chip">CSS</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">React</span>
+            <span class="chip">Accessibility (a11y)</span>
+            <span class="chip">Performance</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="container projects">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-thumb" aria-hidden="true"></div>
+          <h3>Calculator App</h3>
+          <p>A responsive JavaScript calculator with keyboard support and basic expression evaluation.</p>
+          <a class="btn small" href="#" aria-label="Open project Calculator App">Read more</a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-thumb" aria-hidden="true"></div>
+          <h3>Paint App</h3>
+          <p>Canvas-based drawing app with brush, eraser, undo/redo and save features.</p>
+          <a class="btn small" href="#" aria-label="Open project Paint App">Read more</a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-thumb" aria-hidden="true"></div>
+          <h3>Example Website</h3>
+          <p>This site — clean, responsive layout with navigation and contact form.</p>
+          <a class="btn small" href="#" aria-label="Open project Example Website">Read more</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="container contact">
+      <h2>Contact</h2>
+      <div class="contact-grid">
+        <form id="contact-form" class="contact-form" novalidate>
+          <label>
+            Name
+            <input type="text" name="name" id="name" required placeholder="Your name" />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" id="email" required placeholder="you@example.com" />
+          </label>
+          <label>
+            Message
+            <textarea name="message" id="message" rows="6" required placeholder="What would you like to talk about?"></textarea>
+          </label>
+          <div class="form-actions">
+            <button class="btn primary" type="submit">Send Message</button>
+            <button class="btn outline" type="reset">Reset</button>
+          </div>
+          <p id="form-status" class="form-status" aria-live="polite"></p>
+        </form>
+
+        <aside class="contact-info" aria-label="Contact information">
+          <h3>Get in touch</h3>
+          <p>Email: <a href="mailto:hello@example.com">hello@example.com</a></p>
+          <p>Location: Remote</p>
+          <p>Follow: <a href="#" rel="noopener">Twitter</a> • <a href="#" rel="noopener">GitHub</a></p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Jane Doe. Built with care.</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

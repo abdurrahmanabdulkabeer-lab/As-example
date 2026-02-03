@@ -1,0 +1,88 @@
+:root{
+  --bg: #0f1724;
+  --card: #071220;
+  --muted: #94a3b8;
+  --text: #e6eef8;
+  --accent: #06b6d4;
+  --radius: 12px;
+  --container: 1100px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color-scheme: dark;
+  font-size: 16px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%; margin:0; background: linear-gradient(180deg,#071024 0%, #0f1724 100%); color:var(--text)}
+a{color:var(--accent); text-decoration:none}
+.container{max-width:var(--container); margin:0 auto; padding:24px}
+
+/* Header */
+.site-header{backdrop-filter: blur(6px); position:sticky; top:0; z-index:40}
+.header-inner{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 0}
+.brand{display:flex; align-items:center; gap:10px; color:var(--text); text-decoration:none}
+.brand-text{font-weight:600}
+.nav{display:flex; align-items:center}
+.nav-toggle{display:none; background:transparent; border:0; padding:8px; cursor:pointer}
+.hamburger{width:22px; height:2px; background:var(--text); position:relative; display:inline-block}
+.hamburger::before,.hamburger::after{content:""; position:absolute; left:0; width:22px; height:2px; background:var(--text)}
+.hamburger::before{top:-6px}
+.hamburger::after{top:6px}
+.nav-list{list-style:none; margin:0; padding:0; display:flex; gap:18px}
+.nav-list a{padding:8px 6px; border-radius:8px; color:var(--muted)}
+.nav-list a:hover{color:var(--text); background: rgba(255,255,255,0.02)}
+
+/* Hero */
+.hero{padding:48px 0}
+.hero-inner{display:grid; grid-template-columns: 1fr 360px; gap:28px; align-items:center}
+.hero-content h1{font-size:clamp(1.6rem, 2.6vw, 2.6rem); margin:0 0 12px}
+.hero-content p{color:var(--muted); margin:0 0 18px}
+.cta-row .btn{margin-right:10px}
+.hero-image{border-radius:12px; overflow:hidden; box-shadow: 0 8px 30px rgba(2,6,23,0.6)}
+
+/* Sections */
+h2{margin:0 0 18px}
+.about{padding:24px 0}
+.about-grid{display:grid; grid-template-columns:1fr 320px; gap:20px}
+.skills .chip{display:inline-block; padding:6px 10px; background:rgba(255,255,255,0.03); border-radius:999px; margin:6px; color:var(--muted); font-size:0.9rem}
+
+/* Projects */
+.projects{padding:24px 0}
+.project-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:18px}
+.project-card{background: rgba(255,255,255,0.02); padding:16px; border-radius:12px; box-shadow: 0 8px 20px rgba(0,0,0,0.35)}
+.project-thumb{height:120px; border-radius:8px; background:linear-gradient(135deg, #06b6d4, #7c3aed); margin-bottom:12px}
+
+/* Contact */
+.contact{padding:24px 0}
+.contact-grid{display:grid; grid-template-columns: 1fr 320px; gap:20px}
+.contact-form label{display:block; margin-bottom:12px; color:var(--muted)}
+.contact-form input, .contact-form textarea{
+  width:100%; padding:10px 12px; border-radius:8px; border:0; background: rgba(255,255,255,0.02); color:var(--text)
+}
+.form-actions{display:flex; gap:10px; margin-top:8px}
+.form-status{margin-top:12px; color:var(--muted)}
+
+/* Buttons */
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:10px 14px; border-radius:8px; border:0; cursor:pointer; background:rgba(255,255,255,0.03); color:var(--text)}
+.btn.small{padding:8px 10px; font-size:0.95rem}
+.btn.primary{background: linear-gradient(90deg, var(--accent), #7c3aed); color:#04263a}
+.btn.outline{background:transparent; border:1px solid rgba(255,255,255,0.04)}
+
+/* Footer */
+.site-footer{padding:16px 0; border-top:1px solid rgba(255,255,255,0.02); color:var(--muted)}
+
+/* Responsive */
+@media (max-width:960px){
+  .hero-inner{grid-template-columns:1fr 260px}
+  .project-grid{grid-template-columns:repeat(2,1fr)}
+  .about-grid{grid-template-columns:1fr 260px}
+  .contact-grid{grid-template-columns:1fr 260px}
+}
+
+@media (max-width:720px){
+  .nav-list{display:none; position:absolute; right:16px; top:64px; background: rgba(0,0,0,0.5); padding:12px; border-radius:8px; flex-direction:column; gap:8px}
+  .nav-toggle{display:block}
+  .hero-inner{grid-template-columns:1fr; gap:18px}
+  .project-grid{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+}
